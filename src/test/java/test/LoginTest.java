@@ -1,7 +1,7 @@
 package test;
 
 import core.BaseTest;
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 
@@ -17,6 +17,7 @@ public class LoginTest extends BaseTest {
         loginPage.fillUsername("alice");
         loginPage.fillPassword("mypassword");
         loginPage.clickLogin();
+        Assertions.assertTrue(loginPage.existElementByText("Secret Area"));
     }
 
     @Test
@@ -25,5 +26,6 @@ public class LoginTest extends BaseTest {
         loginPage.fillUsername("invalid-username");
         loginPage.fillPassword("invalid-password");
         loginPage.clickLogin();
+        Assertions.assertTrue(loginPage.existElementByText("Invalid login credentials, please try again"));
     }
 }

@@ -3,6 +3,8 @@ package core;
 import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
+import java.util.List;
+import org.openqa.selenium.WebElement;
 
 import static core.DriverFactory.getDriver;
 
@@ -26,6 +28,11 @@ public class BasePage {
 
     public void accessMenu(String text) throws MalformedURLException {
         click(By.xpath("//*[@text='" + text + "']"));
+    }
+
+    public boolean existElementByText(String text) throws MalformedURLException {
+        List<WebElement> elements = getDriver().findElements(By.xpath("//*[@text='" + text + "']"));
+        return elements.size() > 0;
     }
 
 }

@@ -15,4 +15,8 @@ public class ClipboardPage extends BasePage {
         click(AppiumBy.accessibilityId("setClipboardText"));
     }
 
+    public void clickRefreshClipboardText () throws MalformedURLException {
+        click(AppiumBy.accessibilityId("refreshClipboardText"));
+    }
+
 }

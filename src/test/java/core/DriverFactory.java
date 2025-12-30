@@ -22,7 +22,7 @@ public class DriverFactory {
         BaseOptions options = new BaseOptions()
                 .amend("platformName", "Android")
                 .amend("automationName", "UIAutomator2")
-                .amend("deviceName", "emulator-5554")
+                .amend("deviceName", "RX8R808B8TL")
                 // Se for APK local:
                 // .amend("app", System.getProperty("user.dir") + "/apps/seuapp.apk")
                 // Se app instalado (ajuste conforme seu app):

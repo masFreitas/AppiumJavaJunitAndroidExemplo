@@ -1,6 +1,7 @@
 package test;
 
 import core.BaseTest;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.ClipboardPage;
 
@@ -15,6 +16,8 @@ public class ClipboardTest extends BaseTest {
         accessClipboardDemoMenu();
         clipboardPage.enterClipboardText("texto do clipboard");
         clipboardPage.clickSetClipboardText();
+        clipboardPage.clickRefreshClipboardText();
+        Assertions.assertTrue(clipboardPage.existElementByText("Mateus"));
     }
 
 }

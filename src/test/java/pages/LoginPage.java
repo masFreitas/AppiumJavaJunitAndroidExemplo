@@ -2,8 +2,8 @@ package pages;
 
 import core.BasePage;
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.By;
-
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assertions.*;
 import java.net.MalformedURLException;
 
 public class LoginPage extends BasePage {
@@ -19,4 +19,5 @@ public class LoginPage extends BasePage {
     public void clickLogin () throws MalformedURLException {
         click(AppiumBy.accessibilityId("loginBtn"));
     }
+
 }
