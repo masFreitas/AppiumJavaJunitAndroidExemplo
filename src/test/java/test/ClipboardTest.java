@@ -3,7 +3,7 @@ package test;
 import core.BaseTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pages.ClipboardPage;
+import pages.clipboard.ClipboardPage;
 
 import java.net.MalformedURLException;
 

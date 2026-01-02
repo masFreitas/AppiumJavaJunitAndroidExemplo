@@ -1,23 +1,22 @@
-package pages;
+package pages.login;
 
 import core.BasePage;
 import io.appium.java_client.AppiumBy;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Assertions.*;
 import java.net.MalformedURLException;
+import pages.login.LoginSelector;
 
 public class LoginPage extends BasePage {
 
     public void fillUsername (String username) throws MalformedURLException {
-        writeText(AppiumBy.accessibilityId("username"), username);
+        writeText(LoginSelector.USERNAME_INPUT, username);
     }
 
     public void fillPassword (String password) throws MalformedURLException {
-        writeText(AppiumBy.accessibilityId("password"), password);
+        writeText(LoginSelector.PASSWORD_INPUT, password);
     }
 
     public void clickLogin () throws MalformedURLException {
-        click(AppiumBy.accessibilityId("loginBtn"));
+        click(LoginSelector.LOGIN_BUTTON);
     }
 
 }
