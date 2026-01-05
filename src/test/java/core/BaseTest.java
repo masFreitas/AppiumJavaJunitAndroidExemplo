@@ -1,6 +1,9 @@
 package core;
 
 import org.junit.jupiter.api.AfterEach;
+import utils.AllureAttachments;
+import org.junit.jupiter.api.TestInfo;
+
 
 import java.net.MalformedURLException;
 
@@ -9,7 +12,19 @@ public class BaseTest {
     private BasePage basePage = new BasePage();
 
     @AfterEach
-    public void closeApp() {
+    public void closeApp(TestInfo testInfo) {
+        String testName = testInfo.getDisplayName();
+
+        // 1) captura bytes
+        byte[] png = DriverFactory.takeScreenshotBytes();
+
+        // 2) anexa no Allure
+        AllureAttachments.attachPng("Screenshot - " + testName, png);
+
+        // 3) opcional: salva em target/screenshot
+        DriverFactory.saveScreenshotToFile(testName, png);
+
+        // 4) encerra driver
         DriverFactory.tearDown();
     }
 

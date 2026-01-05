@@ -17,6 +17,7 @@
         <allure.version>2.25.0</allure.version>
         <junit.jupiter.version>5.11.0</junit.jupiter.version>
         <surefire.version>3.5.2</surefire.version>
+        <aspectj.version>1.9.21</aspectj.version>
     </properties>
 
     <!-- BOMs DEVEM ficar aqui -->
@@ -60,6 +61,12 @@
             <artifactId>allure-junit5</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -68,6 +75,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
             </plugin>
         </plugins>
     </build>
