@@ -1,5 +1,6 @@
 package core;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
@@ -30,6 +31,7 @@ public class BasePage {
         click(By.xpath("//*[@text='" + text + "']"));
     }
 
+    @Step("Validar existência do texto: {text}")
     public boolean existElementByText(String text) throws MalformedURLException {
         List<WebElement> elements = getDriver().findElements(By.xpath("//*[@text='" + text + "']"));
         return elements.size() > 0;
