@@ -1,9 +1,7 @@
 package pages.clipboard;
 
 import core.BasePage;
-import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
-import pages.clipboard.ClipboardSelector;
 
 import java.net.MalformedURLException;
 
